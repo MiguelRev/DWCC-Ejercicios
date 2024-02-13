@@ -1,0 +1,39 @@
+
+//Permisos con Confirm
+if (window.confirm("Deseas abrir una nueva ventana?")) {
+
+    let newFrame = window.open("ventana.html", "nueva", "height=300, width=300,left=400,top=400");
+
+    //Evento cierre ventana
+    document.querySelector(".boton").addEventListener("click", () => {
+        if (!newFrame.closed) {
+            newFrame.close();
+        } else if (newFrame.closed) {
+            document.write("<h1>La ventana se encuentra cerrada!</h1>");
+        }
+    });
+
+    //MoveTo()
+    function moveTo() {
+        newFrame.moveTo(800, 800);
+    }
+    document.querySelector(".moveTo").addEventListener("click", moveTo);
+
+    //moveBy
+    function moveBy() {
+        newFrame.moveBy(100, 600);
+    }
+    document.querySelector(".moveBy").addEventListener("click", moveBy);
+
+    //Foco
+    //Al parecer,si establecemos el foco nada más perderlo,falla y no lo hace
+    //hay que ponerle un retraso
+    newFrame.addEventListener("blur", () => {
+        setTimeout(() => {
+            newFrame.focus();
+        }, 100);
+    });
+
+} else {
+    window.alert("Se ha denegado la apertura");
+}
