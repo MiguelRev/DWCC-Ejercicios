@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>PAINT</title>
+</head>
+
+<body>
+    <div class="ajustarAncho center">
+        <h1>TABLERO DE DIBUJO EN JAVASCRIPT</h1>
+        <table width="500" border="1" id="paleta" summary="Tabla de selección de colores">
+            <caption>
+                Haga click en un color para comenzar a pintar
+            </caption>
+            <tr>
+                <td class="color1"></td>
+                <td class="color2"></td>
+                <td class="color3"></td>
+                <td class="color4"></td>
+                <td class="color5"></td>
+                <td class="color6"></td>
+            </tr>
+            <tr>
+                <th colspan="6" id="pincel">Estado del pincel</th>
+            </tr>
+        </table>
+        <p></p>
+    </div>
+    <div id="zonaDibujo" class="ajustarAncho center"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
